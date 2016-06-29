@@ -1,21 +1,20 @@
 {
-  "name": "autosiero",
+  "name": "schakelmarketeers.foundation",
   "version": "1.0.0",
-  "description": "Auto Siero Website",
+  "description": "Schakel Marketeers Foundation",
   "main": "index.html",
   "scripts": {
     "test": "grunt test"
   },
   "repository": {
     "type": "git",
-    "url": "https://git.schakelmarketeers.nl/projecten/autosiero-new.git"
+    "url": "https://github.com/SchakelMarketeers/foundation"
   },
   "author": [
       "Roelof Roos <roelof@schakelmarketeers.nl>",
       "Joram Schrijver <joram@schakelmarketeers.nl>",
-      "Gillian Schrijver"
   ],
-  "license": "UNLICENSED",
+  "license": "AGPL-v3",
   "directories": {
     "test": "tests"
   },
