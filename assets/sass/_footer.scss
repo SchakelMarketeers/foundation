@@ -1,0 +1,101 @@
+.site-footer {
+    @include media-breakpoint-only('xs') {
+        padding: 0 0 25px 0;
+    }
+    @include media-breakpoint-up('sm') {
+        padding: 25px 0;
+    }
+}
+
+.site-footer-container {
+    @include make-container();
+    @include make-row();
+}
+
+.site-footer-col {
+    @include make-col();
+
+	@include media-breakpoint-down('sm') {
+		padding-top: 15px;
+		padding-bottom: 15px;
+
+        @include make-col-span(12);
+	};
+
+    address {
+        @extend .text-muted;
+
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.site-footer-col-logo {
+    @extend .site-footer-col;
+
+    @include media-breakpoint-only('sm') {
+        @include make-col-span(5);
+	};
+
+    @include media-breakpoint-up('md') {
+        @include make-col-span(6);
+	};
+
+    @include media-breakpoint-up('lg') {
+        @include make-col-span(7);
+	};
+}
+
+.site-footer-col-address {
+    @extend .site-footer-col;
+    @extend .hidden-xs-down;
+
+    @include media-breakpoint-only('sm') {
+        @include make-col-span(3);
+	};
+
+    @include media-breakpoint-up('md') {
+        @include make-col-span(3);
+	};
+
+    @include media-breakpoint-up('lg') {
+        @include make-col-span(2);
+	};
+}
+
+.site-footer-col-contact {
+    @extend .site-footer-col;
+    @extend .hidden-xs-down;
+
+    @include media-breakpoint-only('sm') {
+        @include make-col-span(4);
+	};
+
+    @include media-breakpoint-up('md') {
+        @include make-col-span(3);
+	};
+}
+
+.site-footer-logo {
+    height: 48px;
+    width: 180px;
+    display: inline-block;
+    background: url(/assets/logo-washed.png) left center no-repeat transparent;
+
+    @include media-breakpoint-only('xs') {
+        display: block;
+        margin: 0px auto;
+    }
+}
+
+.site-footer-black {
+    background-color: $colour-black;
+
+    .site-footer-logo {
+        background-image: url(/assets/logo-light.png);
+    }
+
+    address {
+        color: $colour-white;
+    }
+}

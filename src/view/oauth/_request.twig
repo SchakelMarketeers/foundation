@@ -1,0 +1,11 @@
+{% if site_mode() == 'dev' and request is defined and request is not empty %}
+<h3>Request information</h3>
+<ul>
+{% for val in request %}
+  <li>
+    <strong>{{ val[0] }}:</strong>
+    <span>{{ val[1] }}</span>
+  </li>
+{% endfor %}
+</ul>
+{% endif %}

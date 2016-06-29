@@ -1,0 +1,49 @@
+.site-header {
+    background-color: $colour-white;
+    margin: 0;
+    padding: 2rem 0 2rem 0;
+}
+
+.site-header-container {
+    @include media-breakpoint-up('sm') {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+.site-brand-logo {
+    height: 45px;
+    width: 165px;
+    background: url(/assets/logo.png) left center no-repeat transparent;
+
+    @include media-breakpoint-only('xs') {
+        display: block;
+        margin: 0px auto;
+    }
+}
+
+.site-brand-name {
+    @extend .hidden-xs-down;
+
+    min-width: 200px;
+    flex: 1;
+
+    font-size: 1.4rem;
+    font-family: 'Asap', sans-serif;
+    color: $colour-orange;
+    padding-left: 2rem;
+}
+
+.site-account {
+    @extend .hidden-sm-down;
+
+    min-width: 50px;
+    text-align: left;
+}
+
+.site-logout {
+    font-size: 0.8em;
+    padding-left: 1.2em;
+}

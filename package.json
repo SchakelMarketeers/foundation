@@ -1,0 +1,41 @@
+{
+  "name": "autosiero",
+  "version": "1.0.0",
+  "description": "Auto Siero Website",
+  "main": "index.html",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.schakelmarketeers.nl/projecten/autosiero-new.git"
+  },
+  "author": [
+      "Roelof Roos <roelof@schakelmarketeers.nl>",
+      "Joram Schrijver <joram@schakelmarketeers.nl>",
+      "Gillian Schrijver"
+  ],
+  "license": "UNLICENSED",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "clean-css": "^3.4.18",
+    "es6-promise": "^3.2.1",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-jscs": "^3.0.0",
+    "grunt-newer": "^1.2.0",
+    "grunt-postcss": "^0.8.0",
+    "grunt-sass": "^1.2.0",
+    "grunt-sass-lint": "^0.2.0",
+    "grunt-shell": "^1.3.0",
+    "imagemin-mozjpeg": "^6.0.0"
+  }
+}

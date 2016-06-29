@@ -1,0 +1,74 @@
+{% extends '_template.twig' %}
+
+{% block content %}
+  <article>
+    <h1>Apps</h1>
+    <p>De volgende apps zijn geregistreerd.</p>
+
+    {% if message is defined and message %}
+    <div class="alert alert-{{ message.type|default('info') }} alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+        {{ message.text }}
+      </div>
+    {% endif %}
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Naam</th>
+          <th>Eigenaar</th>
+          <td>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if clients is empty %}
+        <tr>
+          <td colspan="3" class="text-xs-center text-muted">
+            Geen resultaten
+          </td>
+        </tr>
+        {% else %}
+          {% for client in clients %}
+          <tr>
+            <th scope="row">
+              <a href="{{ route('app-info', {id: client.id}) }}">{{ client.name }}</a>
+            </th>
+            <td>
+            {% if client.owner %}
+              <a href="{{ route('user-info', {id: client.owner.id}) }}">
+                {{ client.owner.email }}
+              </a>
+            {% else %}
+              <span class="text-muted">&mdash;</span>
+            {% endif %}
+            </td>
+            <td width="15%">
+              <div class="btn-group">
+              {% if client.owner and client.owner.id == session.userId %}
+                <a class="btn btn-sm btn-secondary" href="{{ route('app-edit', {id: client.id}) }}">
+                  <i class="fa fa-fw fa-pencil-square-o"></i>
+                </a>
+                <a class="btn btn-sm btn-secondary" href="{{ route('app-delete', {id: client.id}) }}">
+                  <i class="fa fa-fw fa-trash"></i>
+                </a>
+              {% else %}
+                <button class="btn btn-sm btn-secondary" disabled>
+                  <i class="fa fa-fw fa-pencil-square-o"></i>
+                </button>
+                <button class="btn btn-sm btn-secondary" disabled>
+                  <i class="fa fa-fw fa-trash"></i>
+                </button>
+              {% endif %}
+            </div>
+            </td>
+          </tr>
+          {% endfor %}
+        {% endif %}
+      </tbody>
+    </table>
+
+    <a href="{{ route('app-add') }}" class="btn btn-primary">Toevoegen</a>
+  </article>
+{% endblock %}

@@ -1,0 +1,8 @@
+{
+    "driver": "pdo_sqlite",
+    "path": "cache/db-testing.sqlite",
+    "hostname": null,
+    "username": null,
+    "password": null,
+    "database": null
+}

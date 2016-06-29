@@ -1,0 +1,14 @@
+$colour-orange:                 rgb(237, 125, 0);
+$colour-orange-navBackground:   rgba(237, 125, 0, 0.9);
+$colour-orangeDark:             rgb(217, 105, 0);
+$colour-greyLight:              rgb(235, 235, 235);
+$colour-greyBackground:         rgb(217, 217, 217);
+$colour-greyMedium:             rgb(190, 190, 190);
+$colour-white:                  rgb(255, 255, 255);
+$colour-black:                  rgb(60, 60, 59);
+$colour-black-textShadow:       rgba(0, 0, 0, 0.6);
+$colour-black-headerShadow:     rgba(0, 0, 0, 0.2);
+$colour-black-wpImageShadow:    rgba(4,4,4, 0.2);
+
+// Override some bootstrappey values
+$brand-primary:                 $colour-orange;

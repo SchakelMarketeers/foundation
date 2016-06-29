@@ -1,0 +1,12 @@
+{% extends '_template.twig' %}
+
+{% block content %}
+  <article class="">
+    <h1>Login with google</h1>
+    <p>Go your gang.</p>
+
+    <a href="{{ loginUrl }}" class="btn btn-primary">Go to login</a>
+
+    {% include 'oauth/_request.twig' %}
+  </article>
+{% endblock %}

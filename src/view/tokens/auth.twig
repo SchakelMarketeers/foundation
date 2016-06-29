@@ -1,0 +1,45 @@
+{% extends '_template.twig' %}
+
+{% block content %}
+  <article>
+    <h1>Authorization tokens</h1>
+    {% if site is defined and site is not empty %}
+      <p>Authorization tokens for {{ site.name }}.</p>
+    {% elseif user is defined and user is not empty %}
+      <p>Authorization tokens for {{ user.email }}.</p>
+    {% else %}
+      <p>All authorization tokens.</p>
+    {% endif %}
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Token</th>
+          <th>Site</th>
+          <th>User</th>
+          <th>Expire</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if tokens is empty %}
+        <tr>
+          <td colspan="5" class="text-xs-center text-muted">
+            No results
+          </td>
+        </tr>
+        {% else %}
+          {% for token in tokens %}
+          {% if token.isExpired %}<tr class="bg-faded">{% else %}<tr>{% endif %}
+            <th scope="row">{{ token.id }}</th>
+            <td>{{ token.code }}</td>
+            <td>{{ token.client.name }}</td>
+            <td>{{ token.user ? token.user.email : '-' }}</td>
+            <td>{{ token.expire|date('c') }}</td>
+          </tr>
+          {% endfor %}
+        {% endif %}
+      </tbody>
+    </table>
+  </article>
+{% endblock %}

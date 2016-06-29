@@ -1,0 +1,51 @@
+<!-- Skip to content link -->
+<a href="#main" class="sr-only">Skip to content</a>
+
+<header class="site-header">
+  <div class="container site-header-container">
+    <a href="{{ route('home') }}" class="site-brand-logo">
+      <span class="sr-only">Schakel Marketeers</span>
+    </a>
+    <div class="site-brand-name">
+      Login platform
+    </div>
+    <div class="site-account">
+      {% if session.loggedIn %}
+      <strong>{{ session.user.firstName }} {{ session.user.lastName }}</strong> <span class="site-logout">(<a href="{{ session.logoutUrl }}">uitloggen</a>)</span><br />
+      {{ session.user.email }}
+      {% else %}
+        <a href="{{ session.loginUrl }}" class="btn btn-primary btn-small">
+          Inloggen
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</header>
+
+<!-- Navbar -->
+<nav class="navbar navbar-full navbar-schakel">
+  <div class="container">
+    <a class="navbar-brand" href="/">Schakel Marketeers Login</a>
+    <ul class="nav navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('app-list') }}">Apps</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('site-list') }}">Sites</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('user-list') }}">Gebruikers</a>
+      </li>
+      <li class="nav-item hidden-md-up">
+      {% if session.loggedIn %}
+        <a class="nav-link" href="{{ session.logoutUrl }}">Uitloggen</a>
+      {% else %}
+        <a class="nav-link" href="{{ session.loginUrl }}">Inloggen</a>
+      {% endif %}
+      </li>
+    </ul>
+  </div>
+</nav>

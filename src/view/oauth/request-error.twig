@@ -1,0 +1,20 @@
+{% extends '_template.twig' %}
+
+{% block content %}
+  <article class="">
+    <h1>Foutieve aanvraag</h1>
+    <p>De aanvraag vanuit de app is ongeldig.</p>
+
+    {% if error is defined and error is not empty %}
+    {% if error_desc is defined and error_desc is not empty %}
+    <p>Foutmelding: <strong>{{ error }}</strong> &mdash; {{ error_desc }}.</p>
+    {% else %}
+    <p>Foutmelding: <strong>{{ error }}</strong>.</p>
+    {% endif %}
+    {% endif %}
+
+    {% include 'oauth/_request.twig' %}
+
+    <a href="{{ route('home') }}" class="btn btn-secondary">Startpagina</a>
+  </article>
+{% endblock %}

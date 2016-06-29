@@ -1,0 +1,30 @@
+{
+  "name": "nl.schakelmarketeers.login",
+  "description": "Schakel Marketeers login platform",
+  "authors": [
+    "Roelof Roos <roelof@schakelmarketeers.nl>"
+  ],
+  "main": "index.php",
+  "keywords": [
+    "php",
+    "html5",
+    "sass",
+    "scss",
+    "project"
+  ],
+  "license": "UNLICENSED",
+  "homepage": "https://login.schakelmarketeers.nl/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^2.0.0",
+    "bootstrap": "^4.0.0",
+    "font-awesome": "fontawesome#^4.6.3"
+  }
+}

@@ -1,0 +1,57 @@
+{% extends '_template.twig' %}
+
+{% block content %}
+  <article>
+    <h1>{{ client.name }} - App verwijderen</h1>
+    <p>Get your brooms out, we're gonna clean this bitch up.</p>
+
+    <form class="form-horizontal" action="{{ route('app-delete', { id: client.id }) }}" method="post">
+
+      <div class="row">
+        <strong class="col-sm-2 form-control-label">Naam</strong>
+        <div class="col-sm-10">
+          {{ client.name }}
+        </div>
+      </div>
+
+      <div class="row">
+        <strong class="col-sm-2 form-control-label">Eigenaar</strong>
+        <div class="col-sm-10">
+          {{ client.owner.email }}
+        </div>
+      </div>
+
+      <div class="row">
+        <strong class="col-sm-2 form-control-label">Redirect URL</strong>
+        <div class="col-sm-10">
+          {{ client.redirectUrl }}
+        </div>
+      </div>
+
+      <div class="row">
+        <strong class="col-sm-2 form-control-label">Client ID</strong>
+        <div class="col-sm-10">
+          {{ client.id }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-offset-2 col-sm-10">
+          <p class="alert alert-info">
+            Weet je zeker dat je deze app wilt verwijderen? Dit kan niet ongedaan gemaakt worden.
+          </p>
+        </div>
+      </div>
+
+      <input type="hidden" name="ok" value="1">
+
+      <div class="form-group row">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input type="submit" class="btn btn-secondary" value="Verwijderen" />
+          <a href="{{ route('app-list') }}" class="btn btn-primary">Annuleren</a>
+        </div>
+      </div>
+
+    </form>
+  </article>
+{% endblock %}

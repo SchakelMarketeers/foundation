@@ -1,0 +1,9 @@
+// White links against a dark background
+.navbar-schakel {
+    @extend .navbar-dark;
+    background-color: $colour-black;
+
+    .navbar-brand {
+        @extend .sr-only;
+    }
+}

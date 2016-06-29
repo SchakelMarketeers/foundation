@@ -1,0 +1,27 @@
+<!-- Google Tag Manager -->
+{% if session.loggedIn %}
+{% set gtm_userId = session.userId %}
+{% else %}
+{% set gtm_userId = '(not set)' %}
+{% endif %}
+{% if client is defined and client is not empty %}
+{% set gtm_clientId = client.id %}
+{% set gtm_clientName = client.name %}
+{% else %}
+{% set gtm_clientId = '(not set)' %}
+{% set gtm_clientName = '(not set)' %}
+{% endif %}
+<script type="text/javascript">
+  window.dataLayer = [{
+    'client-id': '{{ gtm_clientName }}',
+    'client-name': '{{ gtm_clientId }}',
+    'user-id': '{{ gtm_userId }}'
+  }];
+</script>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-578D6D"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-578D6D');</script>

@@ -1,0 +1,11 @@
+{% extends '_template.twig' %}
+
+{% block content %}
+  <article>
+    <h1>Inloggen vereist</h1>
+    <p>Voor deze pagina moet je ingelogd zijn.</p>
+    <p>
+      <a href="{{ session.loginUrl }}" class="btn btn-primary">Inloggen</a>
+    </p>
+  </article>
+{% endblock %}

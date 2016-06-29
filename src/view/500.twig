@@ -1,0 +1,13 @@
+{% extends '_template.twig' %}
+
+{% block content %}
+  <article class="">
+    <h1>500 Internal Server Error</h1>
+    <p>Requested page is not available.</p>
+
+    {% if site_mode() == 'dev' %}
+    {% include 'error/dev.twig' %}
+    {% endif %}
+
+  </article>
+{% endblock %}

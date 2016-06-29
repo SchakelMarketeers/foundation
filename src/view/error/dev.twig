@@ -1,0 +1,20 @@
+
+{# Only shown when in dev #}
+
+{% if error is defined and error is not empty %}
+<p>Error details follow.</p>
+<hr />
+<h3>Unexpected error of type {{ error.type|default('Error') }}</h3>
+<p>Error message: <code>{{ error.msg|default('Unknown error') }}</code></p>
+<p>Error code: <code>{{ error.code|default('n/a') }}</code></p>
+{% endif %}
+
+{# Stacktrace. It helps somewhat #}
+{% if error_trace is defined and error_trace is not empty %}
+<h4>Stack trace</h4>
+<ol>
+  {% for traceline in error_trace %}
+    <li>{{ traceline|raw }}</li>
+  {% endfor %}
+</ol>
+{% endif %}

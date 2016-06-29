@@ -1,0 +1,16 @@
+body {
+    font-family: 'Asap', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5em;
+    background-color: $colour-greyLight;
+}
+
+a {
+    text-decoration: none;
+    color: $colour-orange;
+}
+
+a:hover {
+    color: $colour-orangeDark;
+}

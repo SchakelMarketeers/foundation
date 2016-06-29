@@ -1,0 +1,24 @@
+/**!
+ * Part of Schakel Marketeers Login
+ *
+ * @author Roelof Roos <roelof@schakelmarketeers.nl>
+ * @license Proprietary
+ */
+
+// We overrule some bootstrap stuff, so load colours first
+@import 'colors';
+
+@import '../../bower_components/bootstrap/scss/bootstrap';
+
+@import 'base';
+
+@import 'tweaks';
+@import 'header';
+@import 'navbar';
+@import 'footer';
+
+
+// Fonts, always as last!
+$fa-font-path: '.';
+@import '../../bower_components/font-awesome/scss/font-awesome';
+@import 'resource';

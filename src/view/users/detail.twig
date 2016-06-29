@@ -1,0 +1,40 @@
+{% extends '_template.twig' %}
+
+{% block content %}
+  <article>
+    <h1>{{user.firstName}} {{user.lastName}} &mdash; Informatie</h1>
+
+      <div class="row">
+        <strong class="col-sm-2 form-control-label">Voornaam</strong>
+        <div class="col-sm-10">{{ user.firstName }}</div>
+      </div>
+
+      <div class="row">
+        <strong class="col-sm-2 form-control-label">Achternaam</strong>
+        <div class="col-sm-10">{{ user.lastName }}</div>
+      </div>
+
+      <div class="row">
+        <strong class="col-sm-2 form-control-label">E-mail</strong>
+        <div class="col-sm-10">{{ user.email }}</div>
+      </div>
+
+      <div class="row">
+        <strong class="col-sm-2 form-control-label">Rol</strong>
+        <div class="col-sm-10">{{ user.admin ? 'Admin' : 'User' }}</div>
+      </div>
+
+      <div class="row">
+        <strong class="col-sm-2 form-control-label">Google ID</strong>
+        <div class="col-sm-10"><a href="https://plus.google.com/{{ user.googleId }}" target="_blank">{{ user.googleId }}</a></div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-offset-2 col-sm-10">
+          <a href="{{ route('user-list') }}" class="btn btn-secondary">Terug</a>
+        </div>
+      </div>
+
+    </form>
+  </article>
+{% endblock %}

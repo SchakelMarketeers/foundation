@@ -1,0 +1,41 @@
+{% extends '_template.twig' %}
+
+{% block content %}
+  <article>
+    <h1>Gebruikers</h1>
+    <p>Onderstaande gebruikers zijn geregistreerd in het systeem.</p>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Naam</th>
+          <th>E-mail</th>
+          <th>Rol</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if users is empty %}
+        <tr>
+          <td colspan="3" class="text-xs-center text-muted">
+            Geen resultaten
+          </td>
+        </tr>
+        {% else %}
+          {% for user in users %}
+          <tr>
+            <th scope="row">
+              <a href="{{ route('user-info', {'id': user.id})}}">{{ user.firstName }} {{ user.lastName }}</a>
+            </th>
+            <td>{{ user.email }}</td>
+            <td>{{ user.admin ? 'Admin' : 'Gebruiker' }}</td>
+          </tr>
+          {% endfor %}
+        {% endif %}
+      </tbody>
+    </table>
+
+    {#
+      <a href="{{ route('user-add') }}" class="btn btn-primary">Add</a>
+    #}
+  </article>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends '_template.twig' %}
+
+{% block content %}
+  <article>
+    <h1>Access tokens</h1>
+    {% if site is defined and site is not empty %}
+      <p>Access tokens for {{ site.name }}.</p>
+    {% elseif user is defined and user is not empty %}
+      <p>Access tokens for {{ user.email }}.</p>
+    {% else %}
+      <p>All access tokens.</p>
+    {% endif %}
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Token</th>
+          <th>Site</th>
+          <th>User</th>
+          <th>Expire</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if tokens is empty %}
+        <tr>
+          <td colspan="5" class="text-xs-center text-muted">
+            No results
+          </td>
+        </tr>
+        {% else %}
+          {% for token in tokens %}
+          {% if token.isExpired %}<tr class="bg-faded">{% else %}<tr>{% endif %}
+            <th scope="row">{{ token.id }}</th>
+            <td>{{ token.code }}</td>
+            <td>
+              <a href="{{ route('client-info'), {id: token.client.id}) }}">
+                {{ token.client.name }}
+              </a>
+            </td>
+            <td>
+              {% if token.user %}
+              <a href="{{ route('user-info', {id: token.user.id}) }}">
+                {{ token.user.email }}
+              </a>
+              {% else %}
+              <span class="text-muted">&mdash;</span>
+              {% endif %}
+            </td>
+            <td>{{ token.expire|date('c') }}</td>
+          </tr>
+          {% endfor %}
+        {% endif %}
+      </tbody>
+    </table>
+  </article>
+{% endblock %}

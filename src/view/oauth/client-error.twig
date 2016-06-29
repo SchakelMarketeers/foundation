@@ -1,0 +1,24 @@
+{% extends '_template.twig' %}
+
+{% block content %}
+  <article class="">
+    <h1>Inloggen mislukt</h1>
+    {% if error is defined and error == 'no_login_path' %}
+    <p>Er is iets fout gegaan bij het opstellen van de aanvraag naar Google.</p>
+    {% else %}
+    <p>Er is een fout gerapporteerd vanuit Google of het interne systeem.</p>
+    {% endif %}
+
+    {% if error is defined and error is not empty %}
+    {% if error_desc is defined and error_desc is not empty %}
+    <p>Foutmelding: <strong>{{ error }}</strong> &mdash; {{ error_desc }}.</p>
+    {% else %}
+    <p>Foutmelding: <strong>{{ error }}</strong>.</p>
+    {% endif %}
+    {% endif %}
+
+    {% include 'oauth/_request.twig' %}
+
+    <a href="{{ route('home') }}" class="btn btn-secondary">Startpagina</a>
+  </article>
+{% endblock %}
