@@ -7,7 +7,7 @@
     convertWarningsToExceptions="true"
     bootstrap="./src/bootstrap.php">
     <testsuites>
-        <testsuite name="AutoSiero Website">
+        <testsuite name="Schakel Marketeers Foundation">
             <directory>tests/</directory>
         </testsuite>
     </testsuites>
