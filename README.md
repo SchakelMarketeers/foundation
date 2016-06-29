@@ -1,3 +1,4 @@
-# Schakel Marketeers login
+# Schakel Marketeers foundation
 
-Middleware between web apps and Google Login
+Foundations for websites, which will be able to use the branding theme by
+Scakel Marketeers.
