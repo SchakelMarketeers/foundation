@@ -3,7 +3,7 @@
     "description": "Foundation for simple web apps",
     "type": "package",
     "homepage": "https://www.schakelmarketeers.nl/",
-    "license": "AGPL-v3",
+    "license": "AGPL-3.0",
     "authors": [
         {
             "name": "Roelof Roos",

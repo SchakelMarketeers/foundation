@@ -14,7 +14,7 @@
       "Roelof Roos <roelof@schakelmarketeers.nl>",
       "Joram Schrijver <joram@schakelmarketeers.nl>"
   ],
-  "license": "AGPL-v3",
+  "license": "AGPL-3.0",
   "directories": {
     "test": "tests"
   },

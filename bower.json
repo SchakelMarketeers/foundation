@@ -1,6 +1,7 @@
 {
   "name": "nl.schakelmarketeers.login",
   "description": "Schakel Marketeers login platform",
+  "license": "AGPL-3.0",
   "authors": [
     "Roelof Roos <roelof@schakelmarketeers.nl>"
   ],
